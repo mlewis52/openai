@@ -1,7 +1,13 @@
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Get API key from environment variable
 client = OpenAI(
-  api_key="")
+    api_key=os.getenv("OPENAI_API_KEY"))
 
 print("AI ASSIST AGENT. CONNECTED! TYPE 'BYE' TO END CONVERSATION")
 
